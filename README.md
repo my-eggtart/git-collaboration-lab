@@ -1,12 +1,27 @@
 # Git Collaboration Lab
 
-## AI Assistant Configuration
+Git/GitHub 협업 과정에서 발생하는
+원격 저장소 동기화, Push Reject, Merge Conflict를
+두 개의 독립된 로컬 작업 환경으로 재현한 실습 프로젝트입니다.
+
+## 🎯 실습 목표
+
+- 독립된 두 로컬 저장소에서 협업 흐름 이해
+- `fetch`와 `merge`의 역할 구분
+- Push Reject 발생 원인 이해
+- Merge Conflict 발생 및 해결
+- 충돌 해결 후 원격/로컬 저장소 동기화
+
+## 🧪 실습 환경
+
+| 구분 | 역할 |
+|---|---|
+| Worker A | 첫 번째 로컬 작업 환경 |
+| Worker B | 두 번째 로컬 작업 환경 |
+| GitHub | 두 작업자가 공유하는 원격 저장소 |
 
 
-Response Style: Creative
-Response Style: Analytical
-
-
+## 🔄 Collaboration Flow
 ```mermaid
 sequenceDiagram
     autonumber
@@ -186,3 +201,30 @@ sequenceDiagram
 
     Note over A,B: Worker A = Worker B = GitHub<br/>README: Analytical + Creative
 ```
+
+## ⚡ Merge Conflict Scenario
+
+공통 상태:
+
+`Response Style: Concise`
+
+Worker A:
+
+`Response Style: Analytical`
+
+Worker B:
+
+`Response Style: Creative`
+
+충돌 해결 결과:
+
+`Response Style: Analytical + Creative`
+
+
+## 💡 What I Learned
+
+- `git fetch`는 원격 변경 정보를 가져오지만 작업 파일을 바로 변경하지 않는다.
+- `git merge origin/main`을 통해 원격 변경을 현재 브랜치에 반영할 수 있다.
+- Push Reject와 Merge Conflict는 서로 다른 상황이다.
+- 같은 파일의 같은 영역을 서로 다르게 수정하면 Merge Conflict가 발생할 수 있다.
+- 충돌 해결 후 `git add → git commit → git push` 과정이 필요하다.
