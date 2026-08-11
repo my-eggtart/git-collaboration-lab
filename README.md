@@ -2,4 +2,4 @@
 
 ## AI Assistant Configuration
 
-Response Style: Concise
+Response Style: Creative
